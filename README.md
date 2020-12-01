@@ -78,30 +78,30 @@
     - 字符串分割，"分割字符串"可以是字符串也可以是特殊符号( . | * 这三个字符如果作为分割符，需要加上\ \ 例如str.split("\ \ |") )
 
      
-     public static void main(String[] args){
-      String text = "姓名|年龄|性别\n张三|20|男\n李四|18|男\n小花|18|女";
+          public static void main(String[] args){
+             String text = "姓名|年龄|性别\n张三|20|男\n李四|18|男\n小花|18|女";
+
+           // 使用 split 进行换行符的分割，得到一个新的数组对象
+           String[] data = text.split("\n");
+
+           // 因为第一行是标题不是数据，所以我们需要把长度-1
+           // (注意要使用小括号包围，因为要先计算长度再组合字符串)
+           System.out.println("共有:"+(data.length-1)+" 条记录");
+
+           // 忽略第一行标题数据，所以我们把 i 设为1，从第二条记录开始
+           for(int i=1;i<data.length;i++){
+             // 使用 \\| 进行字符串分割，得到一个新数组对象
+             String[] lines = data[i].split("\\|");
+             System.out.println("姓名:"+lines[0]+" 年纪:"+lines[1]+" 性别:"+lines[2]);
+           }
+          }
     
-      // 使用 split 进行换行符的分割，得到一个新的数组对象
-      String[] data = text.split("\n");
     
-      // 因为第一行是标题不是数据，所以我们需要把长度-1
-      // (注意要使用小括号包围，因为要先计算长度再组合字符串)
-      System.out.println("共有:"+(data.length-1)+" 条记录");
-    
-      // 忽略第一行标题数据，所以我们把 i 设为1，从第二条记录开始
-      for(int i=1;i<data.length;i++){
-        // 使用 \\| 进行字符串分割，得到一个新数组对象
-        String[] lines = data[i].split("\\|");
-        System.out.println("姓名:"+lines[0]+" 年纪:"+lines[1]+" 性别:"+lines[2]);
-      }
-    }
-    
-    
-       //结果
-       共有:3 条记录
-       姓名:张三 年纪:20 性别:男
-       姓名:李四 年纪:18 性别:男
-       姓名:小花 年纪:18 性别:女
+            //结果
+            共有:3 条记录
+            姓名:张三 年纪:20 性别:男
+            姓名:李四 年纪:18 性别:男
+            姓名:小花 年纪:18 性别:女
 
 - **toUpperCase()/toLowerCase()**
 
@@ -161,98 +161,98 @@
 - 获取日期时间具体的值
 
     
-    import java.time.LocalDate;
+         import java.time.LocalDate;
+
+         public class DateTest7 {
     
-    public class DateTest7 {
-    
-      public static void main(String[] args) {
-    
-        LocalDate time = LocalDate.now();
-    
-        // 得到当前时间所在年
-        int year = time.getYear();
-    
-        // 得到当前时间所在月
-        int month = time.getMonth().getValue();
-    
-        // 得到当前时间在这个月中的天数
-        int day = time.getDayOfMonth();
-    
-        // 得到当前时间所在星期数
-        int dayOfWeek = time.getDayOfWeek().getValue();
-    
-      }
-    }
+           public static void main(String[] args) {
+
+             LocalDate time = LocalDate.now();
+
+             // 得到当前时间所在年
+             int year = time.getYear();
+
+             // 得到当前时间所在月
+             int month = time.getMonth().getValue();
+
+             // 得到当前时间在这个月中的天数
+             int day = time.getDayOfMonth();
+
+             // 得到当前时间所在星期数
+             int dayOfWeek = time.getDayOfWeek().getValue();
+
+           }
+          }
 
 
 - 字符串转化为日期时间(LocalDate.parse(date))
    
    
-    import java.time.LocalDate;
+         import java.time.LocalDate;
+
+         public class DateTest8 {
     
-    public class DateTest8 {
-    
-      public static void main(String[] args) {
-        // 定义一个时间字符串，日期是2019年1月1日
-        String date = "2019-01-01";
-    
-        // 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期
-        LocalDate date2 = LocalDate.parse(date);
-        // 打印出日期
-        System.out.println(date2.toString());
+           public static void main(String[] args) {
+             // 定义一个时间字符串，日期是2019年1月1日
+             String date = "2019-01-01";
+
+             // 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期
+             LocalDate date2 = LocalDate.parse(date);
+             // 打印出日期
+             System.out.println(date2.toString());
+           }
       }
-    }
 
 - 若字符串日期格式不是yyyy-MM-dd，就得借助DateTimeFormatter
   (LocalDate.parse(date,df))
 
 
-    import java.time.LocalDate;
-    import java.time.format.DateTimeFormatter;
-    
-    public class DateTest81 {
-    
-      public static void main(String[] args) {
-        // 定义一个时间字符串，日期是2019年1月1日
-        String date = "2019/01/01";
-    
-        DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-    
-        // 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期
-        LocalDate date2 = LocalDate.parse(date,df);
-        // 打印出日期
-        System.out.println(date2.toString());
+         import java.time.LocalDate;
+         import java.time.format.DateTimeFormatter;
+
+         public class DateTest81 {
+
+           public static void main(String[] args) {
+             // 定义一个时间字符串，日期是2019年1月1日
+             String date = "2019/01/01";
+
+             DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+
+             // 把字符串转化位 LocalDate 对象，并得到字符串匹配的日期
+             LocalDate date2 = LocalDate.parse(date,df);
+             // 打印出日期
+             System.out.println(date2.toString());
+           }
       }
-    }
 
 
 - 时间日期的计算
 
 
-    import java.time.LocalDate;
+         import java.time.LocalDate;
+
+         public class DateTest10 {
+
+           public static void main(String[] args) {
+
+             LocalDate now = LocalDate.now();
+             System.out.println("当前：" + now.toString());
+
+             System.out.println("加法运算");
+             System.out.println("加1天：" + now.plusDays(1));
+             System.out.println("加1周：" + now.plusWeeks(1));
+             System.out.println("加1月：" + now.plusMonths(1));
+             System.out.println("加1年：" + now.plusYears(1));
+
+             System.out.println("减法运算");
+             System.out.println("减1天：" + now.minusDays(1));
+             System.out.println("减1周：" + now.minusWeeks(1));
+             System.out.println("减1月：" + now.minusMonths(1));
+             System.out.println("减1年：" + now.minusYears(1));
+
+           }
     
-    public class DateTest10 {
-    
-      public static void main(String[] args) {
-    
-        LocalDate now = LocalDate.now();
-        System.out.println("当前：" + now.toString());
-    
-        System.out.println("加法运算");
-        System.out.println("加1天：" + now.plusDays(1));
-        System.out.println("加1周：" + now.plusWeeks(1));
-        System.out.println("加1月：" + now.plusMonths(1));
-        System.out.println("加1年：" + now.plusYears(1));
-    
-        System.out.println("减法运算");
-        System.out.println("减1天：" + now.minusDays(1));
-        System.out.println("减1周：" + now.minusWeeks(1));
-        System.out.println("减1月：" + now.minusMonths(1));
-        System.out.println("减1年：" + now.minusYears(1));
-    
-      }
-    
-    }
+       }
     
 
 
@@ -285,26 +285,26 @@
 
          public class ArrayListTest1{
 
-      public static void main(String[] args){
-    
-        // 创建一个 ArrayList 存储字符串集合
-        ArrayList<String> strs = new ArrayList<>();
-    
-        // 添加数据到 ArrayList 实例里
-        strs.add("张三");
-        strs.add("李四");
-    
-        // 获取集合的长度
-        int size = strs.size();
-    
-        // 使用 for 循环迭代每一条记录
-        for(int i=0;i<size;i++){
-           // 根据索引获取值，值的类型是 String
-           String str = strs.get(i);
-           System.out.println(str);
-        }
-    
-      }
+           public static void main(String[] args){
+
+             // 创建一个 ArrayList 存储字符串集合
+             ArrayList<String> strs = new ArrayList<>();
+
+             // 添加数据到 ArrayList 实例里
+             strs.add("张三");
+             strs.add("李四");
+
+             // 获取集合的长度
+             int size = strs.size();
+
+             // 使用 for 循环迭代每一条记录
+             for(int i=0;i<size;i++){
+                // 根据索引获取值，值的类型是 String
+                String str = strs.get(i);
+                System.out.println(str);
+             }
+
+           }
     
           }
 
@@ -365,23 +365,23 @@ private | 有权限 | ==无权限== |  ==无权限== |
 
   - 当父类只有一个有参数的构造函数的时候，子类也必须要具备这个构造函数，或者调用super方法来实现新的构造函数 ==(super必须在第一行)==
   
-  
-      //如果需要定义心的构造函数
-      public class JavaFile extends CustomFile{
-    
-      private String packageName;
-    
-      // 声明一个构造函数
-      public JavaFile(String filePath,String packageName){
-        super(filePath);//调用父类
-        this.packageName = packageName;
-      }
-    
-      public String getPackageName(){
-          return this.packageName;
-      }
-    
-    }
+
+           //如果需要定义新的构造函数
+           public class JavaFile extends CustomFile{
+
+           private String packageName;
+
+           // 声明一个构造函数
+           public JavaFile(String filePath,String packageName){
+             super(filePath);//调用父类
+             this.packageName = packageName;
+           }
+
+           public String getPackageName(){
+               return this.packageName;
+           }
+
+         }
   
   
 - **接口**
@@ -399,15 +399,15 @@ private | 有权限 | ==无权限== |  ==无权限== |
    - 命名规则为XxxServiceImpl，后缀为ServiceImpl的是实现类
    
    
-    public class RoleServiceImpl implements RoleService,EchoService{
-    }
+         public class RoleServiceImpl implements RoleService,EchoService{
+         }
     
 - **接口实例化**
 
    - 接口实例化是通过实现类进行
    
    
-    RoleService roleService = new RoleServiceImpl();
+         RoleService roleService = new RoleServiceImpl();
 
 
 - **Java常用接口**
