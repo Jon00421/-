@@ -281,10 +281,10 @@
 - get/size 方法
 
 
-    import java.util.ArrayList;
-    
-    public class ArrayListTest1{
-    
+         import java.util.ArrayList;
+
+         public class ArrayListTest1{
+
       public static void main(String[] args){
     
         // 创建一个 ArrayList 存储字符串集合
@@ -306,7 +306,7 @@
     
       }
     
-    }
+          }
 
 
 - for( 集合变量的类型 变量名称 : 集合变量 )
@@ -417,50 +417,49 @@ private | 有权限 | ==无权限== |  ==无权限== |
 
 - Map
     
-    
-    import java.util.Map;
-    import java.util.HashMap;
-    
-    // key value 得是 Java 类型
-    Map<key,value> map = new HashMap<>();   
+         import java.util.Map;
+         import java.util.HashMap;
 
-    map.put(key,value) //数据存储 
-    map.get(key)  //数据获取
-    int size = map.size(); //集合大小
-    
-    void clear( )
-    从此映射中移除所有映射关系（可选操作）。
-    
-    boolean containsKey(Object k)
-    如果此映射包含指定键的映射关系，则返回 true。
-    
-    boolean containsValue(Object v)
-    如果此映射将一个或多个键映射到指定值，则返回 true。
-    
-    Set entrySet( )
-    返回此映射中包含的映射关系的 Set 视图。
-    
-    boolean equals(Object obj)
-    比较指定的对象与此映射是否相等。
-    
-    Object get(Object k)
-    返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 null。
-    
-    boolean isEmpty( )
-    如果此映射未包含键-值映射关系，则返回 true。
-    
-    Set keySet( )
-    返回此映射中包含的键的 Set 视图。
-    
-    Object put(Object k, Object v)
-    将指定的值与此映射中的指定键关联（可选操作）。
-    
-    void putAll(Map m)
-    从指定映射中将所有映射关系复制到此映射中（可选操作）。
-    
-    Object remove(Object k)
-    如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。
-    
-    Collection values( )
-    返回此映射中包含的值的 Collection 视图。
+         // key value 得是 Java 类型
+         Map<key,value> map = new HashMap<>();   
+
+         map.put(key,value) //数据存储 
+         map.get(key)  //数据获取
+         int size = map.size(); //集合大小
+
+         void clear( )
+         从此映射中移除所有映射关系（可选操作）。
+
+         boolean containsKey(Object k)
+         如果此映射包含指定键的映射关系，则返回 true。
+
+         boolean containsValue(Object v)
+         如果此映射将一个或多个键映射到指定值，则返回 true。
+
+         Set entrySet( )
+         返回此映射中包含的映射关系的 Set 视图。
+
+         boolean equals(Object obj)
+         比较指定的对象与此映射是否相等。
+
+         Object get(Object k)
+         返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 null。
+
+         boolean isEmpty( )
+         如果此映射未包含键-值映射关系，则返回 true。
+
+         Set keySet( )
+         返回此映射中包含的键的 Set 视图。
+
+         Object put(Object k, Object v)
+         将指定的值与此映射中的指定键关联（可选操作）。
+
+         void putAll(Map m)
+         从指定映射中将所有映射关系复制到此映射中（可选操作）。
+
+         Object remove(Object k)
+         如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。
+
+         Collection values( )
+         返回此映射中包含的值的 Collection 视图。
 
