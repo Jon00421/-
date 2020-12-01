@@ -313,14 +313,154 @@
 
     
 
-    ArrayList<String> strs = new ArrayList<>();
+          
+          
+        ArrayList<String> strs = new ArrayList<>();
+        
+        for(String str : strs){
+          System.out.println(str);
+        }
+        //区别在于 遍历集合的时候是否能得到i值
+         for(int i=0;i<size;i++){
+            // 根据索引获取值，值的类型是 String
+            String str = strs.get(i);
+            System.out.println(str);
+        }
+
+
+- **UML(Unified Modeling Language 统一建模语言)**
+   - 正方形 -- private
+
+   - 圆形 -- public
+
+   - 菱形 -- protected
+
+
+- **对象的特性**
+    -  万物皆对象
+    -  每个对象都是唯一的
+    -  对象具备属性和方法
+
+
+- **访问控制修饰符**
+ 
+修饰符 | 同类 |  同包  |  不同的包  |
+---|---|---|---|
+public | 有权限 | 有权限 |  有权限 |
+protected | 有权限 | 有权限 |  ==无权限== |
+default | 有权限 | 有权限 |  ==无权限== |
+private | 有权限 | ==无权限== |  ==无权限== |
+
+
+- **常量 (静态常量)**
+
+   - 常量和实例变量的区别在于不需要通过实例化才能得到变量，而可以直接获取或者操作变量。它的语法也非常简单，借助static 关键字就可以。
+   - 一般使用常量的场景
+        1. 常用的字符串值
+        2. 需要在内存做缓存的值 
+    - ==注意:== 为了和变量区分开，所以一般情况下，常量的变量名采用全大写字母来定义，单词之间用_分割
+
+
+- **继承**
+
+  - 当父类只有一个有参数的构造函数的时候，子类也必须要具备这个构造函数，或者调用super方法来实现新的构造函数 ==(super必须在第一行)==
+  
+  
+      //如果需要定义心的构造函数
+      public class JavaFile extends CustomFile{
     
-    for(String str : strs){
-      System.out.println(str);
+      private String packageName;
+    
+      // 声明一个构造函数
+      public JavaFile(String filePath,String packageName){
+        super(filePath);//调用父类
+        this.packageName = packageName;
+      }
+    
+      public String getPackageName(){
+          return this.packageName;
+      }
+    
     }
-    //区别在于 遍历集合的时候是否能得到i值
-     for(int i=0;i<size;i++){
-        // 根据索引获取值，值的类型是 String
-        String str = strs.get(i);
-        System.out.println(str);
-     }
+  
+  
+- **接口**
+
+    - 定义接口名称遵循XxxService  以Service结尾的类名称代表接口
+    
+
+
+- **接口实现类**
+
+   - 接口定义的方法在实现类里必须要全部实现，并且方法签名要一模一样(同样的方法名称、参数、返回值)
+   - 修饰符必须是public
+   - 实现类可以实现多个接口
+   - 实现类包名在service命名为impl
+   - 命名规则为XxxServiceImpl，后缀为ServiceImpl的是实现类
+   
+   
+    public class RoleServiceImpl implements RoleService,EchoService{
+    }
+    
+- **接口实例化**
+
+   - 接口实例化是通过实现类进行
+   
+   
+    RoleService roleService = new RoleServiceImpl();
+
+
+- **Java常用接口**
+
+   - Map
+   - List ( ArrayList的接口 )
+
+- Map
+    
+    
+    import java.util.Map;
+    import java.util.HashMap;
+    
+    // key value 得是 Java 类型
+    Map<key,value> map = new HashMap<>();   
+
+    map.put(key,value) //数据存储 
+    map.get(key)  //数据获取
+    int size = map.size(); //集合大小
+    
+    void clear( )
+    从此映射中移除所有映射关系（可选操作）。
+    
+    boolean containsKey(Object k)
+    如果此映射包含指定键的映射关系，则返回 true。
+    
+    boolean containsValue(Object v)
+    如果此映射将一个或多个键映射到指定值，则返回 true。
+    
+    Set entrySet( )
+    返回此映射中包含的映射关系的 Set 视图。
+    
+    boolean equals(Object obj)
+    比较指定的对象与此映射是否相等。
+    
+    Object get(Object k)
+    返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 null。
+    
+    boolean isEmpty( )
+    如果此映射未包含键-值映射关系，则返回 true。
+    
+    Set keySet( )
+    返回此映射中包含的键的 Set 视图。
+    
+    Object put(Object k, Object v)
+    将指定的值与此映射中的指定键关联（可选操作）。
+    
+    void putAll(Map m)
+    从指定映射中将所有映射关系复制到此映射中（可选操作）。
+    
+    Object remove(Object k)
+    如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。
+    
+    Collection values( )
+    返回此映射中包含的值的 Collection 视图。
+
