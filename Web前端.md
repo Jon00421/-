@@ -4,8 +4,39 @@
 
 <a name="0i4uY"></a>
 # HTML
-![](https://cdn.nlark.com/yuque/0/2020/jpg/2999046/1607944673788-13acbeff-28ad-4981-a7f0-60422955ee17.jpg#align=left&display=inline&height=369&margin=%5Bobject%20Object%5D&originHeight=738&originWidth=1146&size=0&status=done&style=none&width=573)<br />
-<br />
+
+
+```css
+/* 浏览器都有自己的默认样式，以下部分为清除浏览器默认样式 */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+
+```
+
 
 - **<!DOCTYPE html>**
 1.   作用:告知浏览器该页面文件的文档类型，指示 web浏览器使用哪个HTML版本编写页面。
@@ -230,7 +261,9 @@
   <button type="submit">注册</button>
 </form>
 ```
+`nav` :一般用于表示此区块是**导航**区域<br />`main`:一般用户表示此区块是网页的**主体**区域
 
+---
 
 <a name="zDLCp"></a>
 ## CSS-美化文档
@@ -284,6 +317,12 @@
 `font-family: sans-serif;`
 
    - 可以设置多个字体，浏览器会按顺序加载
+
+
+
+
+---
+
 <a name="8GTJ0"></a>
 ## CSS的引入方式
 
@@ -318,7 +357,7 @@
 - 每个样式后面要用**分号**结尾
 - CSS中注释格式为  `/* ... */`
 
-`<br />`<br />
+
 
 - **外部样式**
 - 新建一个`.css`文件，把`CSS`样式写在里面
@@ -377,10 +416,16 @@
 
 <p id="p-item">这是一段文字</p>
 ```
-<a name="yzOPZ"></a>
+
+
+
+---
+
+<a name="fXHMr"></a>
+### 
+<a name="S4qve"></a>
 ### 高级选择器
 
-<br />
 
 <a name="RJ81A"></a>
 #### 后代选择器（空格）
@@ -400,7 +445,8 @@ p .spanItem{}
 #### 交集选择器
 
 - `a.special{}`    在所有a标签内，类名为special的标签。
-- <br />
+
+<br />
 <a name="7bWRw"></a>
 #### 子选择器
 
@@ -428,8 +474,14 @@ p .spanItem{}
    - 只有当同时选中一个标签时才考虑权重
 
 
-<br />只有当权重一样或优先级一样才考虑层叠性
-<a name="59ru0"></a>
+<br />只有当权重一样或优先级一样才考虑层叠性<br />
+
+
+---
+
+
+
+<a name="r2njW"></a>
 ## CSS-盒模型 
 
 - 默认没有高度，有宽度(继承于父标签)
@@ -458,7 +510,7 @@ div{
 
 - **box-sizing**
 
-      `box-sizing` 规定了如何计算一个元素的总宽度和高度，它有两个值`content-box` ，`border-box`，<br />      默认是`content-box`
+`box-sizing` 规定了如何计算一个元素的总宽度和高度，它有两个值`content-box` ，`border-box`，<br />      默认是`content-box`
 
    - content-box尺寸计算公式:
       - width =内容的宽度
@@ -552,7 +604,136 @@ margin可以使盒子在父盒子中居中，但前提是有宽度<br />`margin:
 
    1. 给父元素设置 `font-size: 0px;`
 
-              回车被当做是一个文字，则可以设置文字大小为0<br />
+              回车被当做是一个文字，则可以设置文字大小为0
+
+---
+
+<a name="qyzUL"></a>
+## Position
+`position`用于定位DOM元素，修改DOM元素的布局<br />
+
+- **static--默认定位**
+- **relative--相对定位**
+
+先遵循默认的文档流布局，再在不改变页面布局的前提调整<br />距离自己原来的位置 
+```css
+.first {
+  position: relative;
+  left: 50px;  /* 距离自己原来位置左侧 50px，顶部 50px */
+  top: 50px;
+}
+```
+
+- **absolute--绝对定位**
+
+绝对定位不为元素预留空间，通过指定元素**相对于最近的非static定位祖先元素的偏移**，来确定元素位置<br />
+
+- **fixed--固定定位**
+
+不随页面滚动而滚动，固定位置<br />
+
+- **sticky--粘性布局**
+
+当滚动到顶部时会黏在顶部，像固定一样
+<a name="FbiAG"></a>
+### z-index 图层优先级
+
+
+1. 默认`非static` 元素的 `z-index` 都为 0
+1. `z-index` 越大，则越在最上面，离观察者越近
+1. `z-index`相同时， 在 HTML 中的元素越靠后，则越在最上面，离观察者越近
+
+
+
+<a name="Nt7Bg"></a>
+## float浮动
+使用场景：
+
+1. 如果我们想要一组元素同时靠左靠右对齐，可以使用float，
+1. 如果我们想要文字围绕图片，可以使用float，
+
+
+<br />
+
+<a name="2mavz"></a>
+## 元素居中
+
+- 水平
+1. 如果内部是行内元素，我们可以在父容器上使用text-align: center。
+1. 如果内部是块状元素，我们可以在子容器上使用margin: 0 auto
+
+
+
+- 垂直
+
+margin-top = (modal高度- img 高度)/2<br />
+
+
+<a name="9vjVZ"></a>
+## 模态框modal
+
+1. 模态框总是在浏览器中心。
+1. 模态框总有一个半透明的背景（蒙层 . mask）
+
+
+
+- 使modal居中
+
+left: 50%;<br />top: 50%;<br />用`margin`属性调整<br />margin-left:  -(width/2) px;<br />margin-top:  -(height/2) px;<br />
+
+<a name="GCMGE"></a>
+## 背景颜色
+`background: linear-gradient(渐变类型,渐变方向,开始颜色,结束颜色);`
+
+- 渐变方向：
+   - 英文方向： to right 向右 、to right bottom 向右下
+   - 角度方向：  deg  
+      - `0deg` 代表渐变方向为从下到上, `90deg` 代表渐变方向为从左到右，诸如此类正角度都属于顺时针方向。 而负角度意味着逆时针方向。
+- 可以在每个色值后面跟一个值（百分比，PX），来约定变色的起止位置。
+<a name="9AsC0"></a>
+## 背景图片
+
+- `background-image: url(...); `
+   - url内的图片地址**不需要引号包裹**
+   - 当背景图片长宽任意一项小于容器长宽，默认CSS会让图片铺满
+
+<br />
+
+- `background-repeat`
+   - `repeat-x`  水平方向重复
+   - `repeat-y`  垂直方向重复
+   - `no-repeat`  不重复
+
+<br />
+
+- `background-position`
+   -  `top left`效果等于
+
+`background-position-x: left;`<br />`background-position-y: top;`<br />如果只写一个关键词，另一个关键词默认`center`
+
+   - `x% y%`  左上角是0%0%。右下角是100%100%。如果只写一个值，另一个值将是50%。
+   - `xpx ypx`单位是像素(0px 0px)或任何其他的CSS单位。如果只写一个值，另一个值将是50%
+
+<br />
+
+- `background-size`
+   - `cover`  可能显示不完全
+   - `contain` 把图像图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。
+   - `xpx ypx`   `x% y%`  手动设置 宽 高
+
+
+<br />**合并写法**<br />`background: [background-color] [background-image] [background-repeat] [background-attachment][ background-position] / [background-size] [background-clipl];`  如果没有此属性，则置空，属性间空格隔开<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <br />
 <br />
 <br />
