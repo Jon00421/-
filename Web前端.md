@@ -1,10 +1,7 @@
 # Web前端
 
 
-
-<a name="0i4uY"></a>
-# HTML
-
+<br />
 
 ```css
 /* 浏览器都有自己的默认样式，以下部分为清除浏览器默认样式 */
@@ -45,8 +42,6 @@ p {
 1. `<!DOCTYPE>`声明没有结束标签。
 
 
-<br />
-<br />
 
 - **<html lang= "en">...</html>**
 
@@ -63,18 +58,6 @@ p {
 
 <a name="y4KeK"></a>
 ## 文本标签
-
-
-<a name="sHNFO"></a>
-### 块状标签
-
-   - 独占一行
-   - `<p>` 、`<h1>`、`<div>`
-<a name="TlBPZ"></a>
-### 内联标签
-
-   - 只占一行中的一部分，常被嵌套于块状标签
-   - `<span>`、`<img>`、`<strong>`
 <a name="EqiUk"></a>
 ### 标题标签
 
@@ -142,7 +125,8 @@ p {
 
 
 <a name="JtH7q"></a>
-### 单行文本输入框
+### <input/>
+ 单行文本输入框
 ```html
 <!-- action=""则表单信息将提交到当前页面 -->
 <form action="">
@@ -166,8 +150,8 @@ p {
 
 
 <a name="bjGtX"></a>
-### 多行文本输入框
-当多行文本输入框中输入的内容超过一行的长度时，它会自动换行，而单行文本输入框则不会换行。
+### <textarea>
+当**多行文本输入框**中输入的内容超过一行的长度时，它会自动换行，而单行文本输入框则不会换行。
 ```html
 <!-- name属性表示表单元素的名称，placeholder属性表示表单元素的占位文本 -->
 <textarea
@@ -605,6 +589,8 @@ margin可以使盒子在父盒子中居中，但前提是有宽度<br />`margin:
    1. 给父元素设置 `font-size: 0px;`
 
               回车被当做是一个文字，则可以设置文字大小为0
+<a name="rU3ng"></a>
+### display: none; 隐藏元素
 
 ---
 
@@ -722,7 +708,7 @@ left: 50%;<br />top: 50%;<br />用`margin`属性调整<br />margin-left:  -(widt
    - `xpx ypx`   `x% y%`  手动设置 宽 高
 
 
-<br />**合并写法**<br />`background: [background-color] [background-image] [background-repeat] [background-attachment][ background-position] / [background-size] [background-clipl];`  如果没有此属性，则置空，属性间空格隔开<br />
+<br />**合并写法**<br />`background: [background-color] [background-image] [background-repeat] [background-attachment][ background-position]``/`` [background-size] [background-clipl];`  如果没有此属性，则置空，属性间空格隔开<br />
 <br />
 <br />
 <br />

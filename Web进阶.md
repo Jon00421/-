@@ -129,7 +129,7 @@ Flex 是 Flexible Box 的缩写，意为"弹性布局"。<br />`display: flex;`
 
 <a name="HLpwz"></a>
 #### 改变容器中主轴和交叉轴的方向 flex-direction
-设置在容器上<br />**主轴**：水平，从左到右<br />**交叉轴**：垂直，从上到下<br />![](https://cdn.nlark.com/yuque/0/2020/jpeg/2999046/1608596588601-af9ca075-08eb-4b5d-bdfc-80e4a6794491.jpeg#align=left&display=inline&height=188&margin=%5Bobject%20Object%5D&originHeight=250&originWidth=800&size=0&status=done&style=none&width=600)<br />**主轴改变后的影响**
+设置在容器上<br />**主轴**：水平，从左到右<br />**交叉轴**：垂直，从上到下<br />![](https://cdn.nlark.com/yuque/0/2020/jpeg/2999046/1608596588601-af9ca075-08eb-4b5d-bdfc-80e4a6794491.jpeg#align=left&display=inline&height=250&margin=%5Bobject%20Object%5D&originHeight=250&originWidth=800&size=0&status=done&style=none&width=800)<br />**主轴改变后的影响**
 
 1. 默认情况: `justify-content` 控制水平方向，`align-items`控制垂直方向;
 1. 设置了`flex-direction: column` ， `justify-content` 控制垂直方向，`align-items` 控制水平方向;
@@ -172,60 +172,8 @@ display: -webkit-box;
 
 
 <a name="u0460"></a>
-## SCSS--CSS预编译器
-**Sass** 缩进格式  <br />使用“缩进”代替“花括号”表示属性属于某个选择器，用“换行”代替“分号”分隔属性，<br />
-<br />**Scss**语法兼容CSS3<br />变量以"$"开头<br />
-<br />**插值法 **`**#{}**`<br />几乎可在Sass样式表任何地方使用
-```css
-$name: "mail";
-$top-or-bottom: "top";
-$left-or-right: "left";
+## 
 
-.icon-#{$name} {
-  background-image: url("/icons/#{$name}.svg");
-  position: absolute;
-  #{$top-or-bottom}: 0;
-  #{$left-or-right}: 0;
-}
-```
-**嵌套**<br />Sass 允许将一套CSS样式嵌套进另一套样式中，内层的样式将它外层的选择器作为父选择器<br />
-<br />父选择器 & <br />在嵌套CSS 规则时，有时也需要直接使用嵌套外层的父选择器，可以使用 `&`<br />
-<br />**复用 mixin/include**<br />无参数混合
-
-- `@mixin`: 定义可复用的样式
-- `@include`: 应用可复用的样式
-```css
-@mixin square {
-  width: 100px;
-  height: 100px;
-}
-// 应用：
-.user-avatar {
-  @include square;
-}
-.admin-avatar {
-  @include square;
-}
-```
-有参数混合
-```css
-参数可设置默认值
-@mixin square($size: 100px)
-@mixin square($size) {
-  width: $size;
-  height: $size;
-}
-// 应用
-.avatar {
-  @include square(100px);
-}
-```
-
-<br />
-<br />
-<br />
-<br />
-<br />
 <br />
 <br />
 <br />

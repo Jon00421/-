@@ -4,11 +4,11 @@
 # Java网络编程
 <a name="3WYps"></a>
 ## 网络协议（HTTP/HTTPS）
-![](https://cdn.nlark.com/yuque/0/2020/jpeg/2999046/1607084630001-6be20edf-5a02-4ba7-8ad0-f4401c17d9cf.jpeg#align=left&display=inline&height=546&margin=%5Bobject%20Object%5D&originHeight=546&originWidth=800&size=0&status=done&style=none&width=800)<br />
+![](https://cdn.nlark.com/yuque/0/2020/jpeg/2999046/1607084630001-6be20edf-5a02-4ba7-8ad0-f4401c17d9cf.jpeg#align=left&display=inline&height=273&margin=%5Bobject%20Object%5D&originHeight=546&originWidth=800&size=0&status=done&style=none&width=400)<br />
 
 <a name="HSQad"></a>
 ## URL
-`Uniform Resource Locato` 统一资源定位符<br />![](https://cdn.nlark.com/yuque/0/2020/png/2999046/1607044314350-63ed75da-83b4-44f0-91e8-abe4f3cbfdd1.png#align=left&display=inline&height=470&margin=%5Bobject%20Object%5D&originHeight=470&originWidth=1648&size=0&status=done&style=none&width=1648)
+`Uniform Resource Locato` 统一资源定位符<br />![](https://cdn.nlark.com/yuque/0/2020/png/2999046/1607044314350-63ed75da-83b4-44f0-91e8-abe4f3cbfdd1.png#align=left&display=inline&height=149&margin=%5Bobject%20Object%5D&originHeight=470&originWidth=1648&size=0&status=done&style=none&width=523)
 
 - **端口号**
    - `HTTP`协议默认端口号`80`
@@ -34,7 +34,7 @@ JSON格式化工具[http://www.ab173.com/json/jsonviewernew.php](http://www.ab17
    - 名称（键）必须是字符串
    - 键、值之间用冒号 “`:`” 分隔。
 - 多条数据之间，用逗号 “`,`” 分隔
-- 注意符号都是半角，不要因为输入法的原因输入全角了
+- 注意符号都是半角
 
 
 
@@ -79,7 +79,7 @@ JSON格式化工具[http://www.ab173.com/json/jsonviewernew.php](http://www.ab17
 
 - `**import**``**com**``.alibaba``.fastjson``.JSON``;`
 ```json
-public static void main(String<[] args) {
+public static void main(String[] args) {
     Building b = new Building();
     b.setName("创业大厦");
     b.setAddress("天宁兰陵兰陵路26号 ");
@@ -201,7 +201,7 @@ public class GetPage {
 ### Get请求 - 有参数
 
 - 与无参数的请求区别在`URL`包不包含参数
-- ` String url = "https://api.apiopen.top/getJoke?page=1&count=2&type=video";`
+- `String url = "https://api.apiopen.top/getJoke?page=1&count=2&type=video";`
 <a name="QuWEy"></a>
 ### post()方法
 
